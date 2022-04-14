@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+
+    body {
+      margin: 0;
+    }
+
+    video{
+      margin: auto;
+      width:100%;
+      height:100%;
+      object-fit: contain; 
+    }
+
+    #button {
+      position:absolute; 
+      left:5%;
+      top: 40%;
+      width: 90%;
+      font-size: 300%;
+      padding: 30px;
+      border: none;
+      border-radius: 20px;
+      background: #ddd;
+      color: #fff;
+      margin: auto;
+    }
+
+  </style>
+
+  </head>
+  <body>
+
+    <video autoplay loop id="video">
+      <source src="rickroll.mp4" type="video/mp4">
+    </video>
+    <button id="button" onclick="play()">Reveal</button>
+
+    <script>
+      var video = document.getElementById("video");
+      video.style.display = "none";
+      function play() {
+        button.style.display = "none";
+        video.style.display = "initial";
+        video.play();
+      }
+    </script>
+
+  </body>
+
+</html>
