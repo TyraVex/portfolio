@@ -20,15 +20,15 @@
     }
 
     body {
+      margin: 0;
       height: 100%;
       animation: fade ease 1.5s;
       -webkit-tap-highlight-color: transparent;
-      background: linear-gradient(315deg, #ffffff, #d7e1ec);
     }    
 
     #button {
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-      background: linear-gradient(315deg, #d7e1f7, #ecdeff);
+      background: linear-gradient(315deg, #7cb0cc, #7c96cc);
       font-family: "Poppins", sans-serif;
       text-decoration: none;
       border-radius: 5vmin;
@@ -37,42 +37,69 @@
       color: #1a1a1a;
     }
 
+    video {
+      width: 100vmin;
+      height: 100%;
+      position: fixed;
+    }
+
     @media all and (orientation:portrait) {
+
       #button {
         left: 10%;
         bottom: 5%;
+        padding: 5% 20% 5% 20%;
       }
+
       img {
         position: fixed;
         width: 70vmin;
         left: 15%;
         top: 8%;
       }
-      #button {
-        padding: 5% 20% 5% 20%;
-      }
+
     }
 
     @media all and (orientation:landscape) {
+
       #button {
         left: 65%;
         top: 24%;
+        padding: 5% 5% 5% 5%;
       }
+
       img {
         position: fixed;
         width: 70vmin;
         left: 4%;
         top: 8%;
       }
-      #button {
-        padding: 5% 5% 5% 5%;
-      }
+
+      video { left: 30%; }
+
     }
 
   </style>
   </head>
   <body>
-    <img src="logo.svg"/>
-    <a href="../rickroll/index.html" id="button">Reveal</a>
+    <img id="logo" src="logo.svg"/>
+    <a id="button" onclick="remove()">Reveal</a>
+    <video autoplay loop id="video">
+      <source src="rickroll.mp4" type="video/mp4">
+    </video>
+    <script>
+       document.body.style.background = "linear-gradient(to top, #8ed9ff, #5165ff)";
+       const logo = document.getElementById('logo');
+       const button = document.getElementById('button');
+       const video = document.getElementById('video');
+       video.style.display = "none";
+       function remove() { 
+         logo.remove();
+         button.remove();
+         document.body.style.background = "#000";
+         video.style.display = "block";
+         video.play();
+       }
+    </script>
   </body>
 </html>
