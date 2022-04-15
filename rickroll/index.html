@@ -4,7 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body { margin: 0; background-color: black; }
-    video{ margin: auto; width:100%; height:100%; object-fit: contain; }
+    video { width: 100vmin; height: 100%; position: fixed; }
+    @media all and (orientation:landscape) {
+      video { left: 30%; }
+    }
   </style>
   </head>
   <body>
