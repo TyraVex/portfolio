@@ -6,30 +6,73 @@
 
     @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
+    @keyframes fade {
+      0% {
+        opacity:0;
+      }
+      100% {
+        opacity:1;
+      }
     }
- 
+
+    html {
+      height:100%;
+    }
+
+    body {
+      height: 100%;
+      animation: fade ease 1.5s;
+      -webkit-tap-highlight-color: transparent;
+      background: linear-gradient(315deg, #ffffff, #d7e1ec);
+    }    
+
     #button {
-      font-family: "Poppins", sans-serif;
-      text-align:center;
-      height: 30px;
-      width: 200px;
-      left: 50%;
-      top: 50%;
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-      transition: opacity 2.0s ease-in;
-      margin-top: -15px;   /* = -height / 2   */
-      margin-left: -100px; /* = -width / 2    */
-      position: fixed;     /* Fixed is better */
+      background: linear-gradient(315deg, #d7e1f7, #ecdeff);
+      font-family: "Poppins", sans-serif;
+      text-decoration: none;
+      border-radius: 5vmin;
+      position: fixed;
+      font-size: 300%;
+      color: #1a1a1a;
+    }
+
+    @media all and (orientation:portrait) {
+      #button {
+        left: 10%;
+        bottom: 5%;
+      }
+      img {
+        position: fixed;
+        width: 70vmin;
+        left: 15%;
+        top: 8%;
+      }
+      #button {
+        padding: 5% 20% 5% 20%;
+      }
+    }
+
+    @media all and (orientation:landscape) {
+      #button {
+        left: 65%;
+        top: 24%;
+      }
+      img {
+        position: fixed;
+        width: 70vmin;
+        left: 4%;
+        top: 8%;
+      }
+      #button {
+        padding: 5% 5% 5% 5%;
+      }
     }
 
   </style>
   </head>
   <body>
+    <img src="logo.svg"/>
     <a href="../rickroll/index.html" id="button">Reveal</a>
   </body>
 </html>
