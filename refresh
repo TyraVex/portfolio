@@ -1,4 +1,0 @@
-#!/bin/bash
-while true; do
-  $(npm run dev >/dev/null 2>&1 &) && sleep 3 && pkill npm
-done
