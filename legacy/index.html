@@ -93,16 +93,12 @@
       }
 
       .grid {
-        column-gap: 25px;
-        border-radius: 20px;
-        columns: 20em;
+        display: grid;
+        grid-auto-rows: minmax(100px, auto);
       }
 
       .container {
         border-radius: 20px;
-        display:table;      
-        page-break-inside: avoid;
-        break-inside: avoid-column;
         background-color: rgba(0, 0, 0, 0.2);
       }
 
@@ -135,6 +131,11 @@
           top: -90px;
         }
 
+        .grid {
+          column-gap: 20px;
+          row-gap: 20px;
+        }
+
         section {
           padding: 20px;
           margin: 20px;
@@ -150,10 +151,6 @@
           padding: 20px 20px 2px 20px;
           width: calc(100% - 40px);
         } 
-
-        .gap {
-          margin-bottom: 20px;
-        }
 
         .container > h1 {
           margin: 0 -3px 0 5px;
@@ -196,8 +193,14 @@
           top: -70px;
         }
 
+        .grid {
+          row-gap: 25px;
+          column-gap: 12.5px;
+          grid-template-columns: repeat(2, 50%);
+        }
+
         section {
-          margin: 30px;
+          margin: 25px;
           padding: 25px;
         }
 
@@ -209,11 +212,7 @@
     
         .container {   
           padding: 4px 25px 5px 25px;
-          width: calc(100% - 50px);
-        }
-
-        .gap {
-          margin-bottom: 25px;
+          width: calc(100% - 62.5px);
         }
 
       }
@@ -243,7 +242,7 @@
     <section>
       <h1>HOME</h1>
       <div class="grid">
-        <div class="container gap">
+        <div class="container">
           <h1># Hello !</h1>
           <p>I am TyraVex, a self-taught developper and an engineering lover.</p>
           <p>I love code, cybersecurity, mechatronics and managment.</p>
@@ -264,15 +263,15 @@
     <section>
       <h1>MECHATRONICS</h1>
       <div class="grid">
-        <div class="container gap">
+        <div class="container">
           <h1># Master fonction</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># PC Build</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># FPV Drone</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
@@ -285,51 +284,51 @@
     <section>
       <h1>CODING</h1>
       <div class="grid">
-        <div class="container gap">
+        <div class="container">
           <h1># Environment</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># Github projects</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># Easy downloader</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># Pressor</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># Bad usb scripts</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># Hashacker</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># World sorter</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># MChecker</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># Website dumper</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># École directe cli</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># Startup scripts</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># Bash scripts</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
@@ -342,11 +341,11 @@
     <section>
       <h1>CYBER SECURITY</h1>
       <div class="grid">
-        <div class="container gap">
+        <div class="container">
           <h1># Scam takedown</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
-        <div class="container gap">
+        <div class="container">
           <h1># Data breach</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
@@ -360,7 +359,7 @@
     <section>
       <h1>CONTACT ME</h1>
       <div class="grid">
-        <div class="container gap">
+        <div class="container">
           <h1># Socials</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
