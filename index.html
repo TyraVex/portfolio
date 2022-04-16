@@ -2,21 +2,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-<!--    <link rel="icon" type="image/svg+xml" href="favicon.svg" />-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>TyraVex's Portfolio</title>
     <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400');
+
       canvas {
         position: fixed;
         top: 0;
-        left: 0
+        left: 0;
       }
+            
+      main {
+        margin: 0;
+        bottom: 0;
+        width: 100vw;
+        z-index: 99;
+        position: absolute;
+        display: flex;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5em;
+      }
+
+      p {
+        width: 100vw;
+        text-align: center;
+      }
+
+      a {
+        padding: 11px;
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        background-color: #424242;
+      }
+
     </style>
   </head>
   <body>
-    <div id="app"></div>
     <canvas id="bg"></canvas>
+    <main>
+      <p>
+        <a href="https://github.com/TyraVex">GITHUB</a>
+        <a href="legacy/index.html">LEGACY WEBSITE</a>
+      </p>
+    </main>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
