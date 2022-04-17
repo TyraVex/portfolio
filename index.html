@@ -1,78 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg"/>
-    <title>MPP (legacy)</title>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TyraVex's Portfolio</title>
     <style>
 
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400');
 
-      @keyframes fade {
-        0% {
-          opacity:0;
-        }
-        100% {
-          opacity:1;
-        } 
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        color: white;
-        animation: fade ease 2s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        -webkit-tap-highlight-color: transparent;
-        font-family: 'Montserrat', sans-serif;
-        background: linear-gradient(90deg, rgba(16,12,96,1), rgba(70,32,90,1));
-      }
-
-      h1, h2, h3 {
-        font-family: 'Montserrat', sans-serif;
-        letter-spacing: 0.1em;
-        font-weight: 100;
-      }
-
-      header {
+      canvas {
+        position: fixed;
         top: 0;
-        width: 100%;
-        z-index: 98; 
-        padding: 15px;
-        position: fixed;
-        background-color: #26282b;
+        left: 0;
+      }
+            
+      main {
+        margin: 0;
+        bottom: 0;
+        z-index: 99;
+        position: absolute;
+        display: flex;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5em;
       }
 
-      #logo {
-        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MjMiIGhlaWdodD0iNjczIiBmaWxsPSIjZmZmIiB4bWxuczp2PSJodHRwczovL3ZlY3RhLmlvL25hbm8iPjxwYXRoIGQ9Ik01OTUgMzc2aDgwbC01NiAxMjBoLTgwek0zOTUuOSAyNzNoMTAwTDMwOS4zIDY3M2gtMTAweiIvPjxwYXRoIGQ9Ik01MjIuNyAyNzNoMjAwbC0zNy40IDgwaC0yMDB6bS03OCAxNjhoMjAwbC0zNy40IDgwaC0yMDB6TTU5MyAxMDNoODBsLTU2IDEyMGgtODB6TTM5My45IDBoMTAwTDMwNy4zIDQwMGgtMTAweiIvPjxwYXRoIGQ9Ik0xODYuOSAxNjNoMTAwTDEwMC4zIDU2M0guM3pNNTIwLjcgMGgyMDBsLTM3LjQgODBoLTIwMHptLTc4IDE2OGgyMDBsLTM3LjQgODBoLTIwMHoiLz48L3N2Zz4=) no-repeat center center;
-        background-size: 40px;
-        padding: 40px 0 0 40px;
-        display: block;
+      p {
+        text-align: center;
+        width: 98vw;
       }
 
-      .anchor {
-        display: block;
-        position: relative;
-      }
-
-      .anchor-container {
-        display: block;
-        position: relative;
-      }
-
-      .buttons {
-        position: fixed;
-        right: 15px;
-        z-index: 99; 
-        top: 25px;
-      }
-      
-      #button {
+      a {
         padding: 11px;
         color: white;
         font-size: 14px;
@@ -83,385 +42,16 @@
         background-color: #424242;
       }
 
-      .title-1 {
-        display: flex;
-        margin-top: 50px;
-        align-items: center;
-        justify-content: center;
-        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MjMiIGhlaWdodD0iNjczIiBmaWxsPSIjMTEwODMwIiB4bWxuczp2PSJodHRwczovL3ZlY3RhLmlvL25hbm8iPjxwYXRoIGQ9Ik01OTUgMzc2aDgwbC01NiAxMjBoLTgwek0zOTUuOSAyNzNoMTAwTDMwOS4zIDY3M2gtMTAweiIvPjxwYXRoIGQ9Ik01MjIuNyAyNzNoMjAwbC0zNy40IDgwaC0yMDB6bS03OCAxNjhoMjAwbC0zNy40IDgwaC0yMDB6TTU5MyAxMDNoODBsLTU2IDEyMGgtODB6TTM5My45IDBoMTAwTDMwNy4zIDQwMGgtMTAweiIvPjxwYXRoIGQ9Ik0xODYuOSAxNjNoMTAwTDEwMC4zIDU2M0guM3pNNTIwLjcgMGgyMDBsLTM3LjQgODBoLTIwMHptLTc4IDE2OGgyMDBsLTM3LjQgODBoLTIwMHoiLz48L3N2Zz4=) no-repeat center center;
-        background-size: 80%;
-      }
-
-      section {
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 30px;
-      }
-
-      .container {
-        border-radius: 20px;
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-
-      .container > * > a {
-        text-decoration: none;
-        color: #30a7fc;
-      }
-
-      .box-plan > p {
-        margin: 0.4em 0 0.4em 1em;
-      }
-
-      .box-plan > p {
-        text-indent: -0.65em;
-      }
-
-      /*---Portrait---*/
-
-      @media (max-aspect-ratio: 3/2) {
-
-        .title-1 {
-          width: 100vw;
-          height: 100vw;
-          font-size: 13vw;
-          margin-top: 60px;
-        }
-
-        .title-2 {
-          font-size: 8vw;
-          margin: -35vw 0 0 9vw;
-        }
-
-        .arrow {
-          margin: 5vw auto 30vw auto;
-          width: 30vw;
-        }
-
-        .arrow-shape {
-          margin: 5vw auto 30vw auto;
-          border: solid white;
-          width: 2.5em;
-          height: 2.5em;
-          border-width: 0 3px 3px 0;
-          border-bottom-right-radius: 0.35em;
-          transform: rotate(45deg);
-        }
-
-        .jump {
-          height: 5vw;
-        }
-
-        .anchor {
-          top: -90px;
-        }
-
-        .anchor-container {
-          top: -110px;
-        }
-
-        section {
-          padding: 20px 20px 0.1px 20px;
-          margin: 20px;
-        }
-    
-        section > h1 {
-          font-size: 8vmin;
-          text-align: center;
-          margin: 0 0 20px;
-        }
-
-        .container {
-          padding: 20px 20px 0.1px 20px;
-          margin-bottom: 20px;
-        } 
-
-        .container > h1 {
-          margin: 0 -3px 0 5px;
-        }
-
-      }
-
-      /*---Landscape---*/
-
-      @media (min-aspect-ratio: 3/2) {
-
-        .title-1 {
-          margin-top: 100px;
-          width: 65vmin;
-          height: 65vmin;
-          font-size: 9vmin;
-        }
-
-        .title-2 {
-          margin-top: 100px;
-          font-size: 5vmin;
-          margin: -22vh 0 0 6vh;
-        }
-
-        .top {
-          margin: 0;
-          top: 50%;
-          left: 50%;
-          position: absolute;
-          transform: translate(-50%, -50%);
-        }
-
-        .jump {
-          height: 100vmin;
-        }
-
-        .anchor {
-          top: -95px;
-        }
-
-        .anchor-container {
-          top: -95px;
-        }
-
-        .anchor-fix {
-          top: -70px;
-        }
-
-        section {
-          margin: 25px;
-          padding: 0.1px 25px 25px 25px;
-        }
-
-        .grid-auto {
-          display: grid;
-          row-gap: 25px;
-          column-gap: 25px;
-          grid-template-columns: repeat(2, calc(50% - 12.5px));
-        }
-
-        .plan {
-          grid-column-start: 2;
-          grid-column-end: 2;
-          grid-row-start: 1;
-          grid-row-end: 2;
-        }
-
-        section > h1 {
-          font-size: 3em;
-          text-align: center;
-        }
-    
-        .container {
-          padding: 5px 25px 5px 25px;
-        }
-
-      }
-
     </style>
   </head>
-  <body class="fade">
-    <header>
-      <a href=""><img id="logo"></a>
-      <div class="buttons">
-        <a id="button" href="#home">HOME</a>
-        <a id="button" href="#plan">PLAN</a>
-        <a id="button" href="#contact">CONTACT</a>
-      </div>
-    </header>
-    <div class="top">
-      <div class="title-1">
-        <h1>MPP:</h1><br/>
-      </div>
-      <div class="title-2">
-        <h2>my<br/>personnal<br/>projects</h2>
-      </div>
-    </div>
-    <div class="jump"></div>
-    <a class="arrow" href="#home">
-      <div class="arrow-shape"></div>
-    </a>
-    <a class="anchor anchor-fix" id="home"></a>
-    <section>
-      <h1>HOME</h1>
-      <div class="grid-auto">
-        <div class="container box-hello">
-          <h1># Hello !</h1>
-          <p>I am TyraVex, a self-taught developer and an engineering lover.</p>
-          <p>I am enthralled by programming, cybersecurity, mechatronics and management.</p>
-          <p>Automating tasks, playing with APIs, AIs, and new technologies are my computer related passions.</p>
-          <p>Realizing new projects using electronics, soldering, a modeling software and my 3D printer make me enjoy the fascinating world of engeneering.</p>
-          <p>In a few words, building the software of tomorrow, performing penetration tests and combining these with electronics in any way is my ultimate dream.</p>
-        </div>
-        <div class="container box-about">
-          <h1># About this page</h1>
-          <p>This page is still in development. It is planned to be merged with the <a href="../index.html">mpp.pw</a> main page.</p>
-          <p>I made this website to showcase my mechatronics, coding and cybersecurity projects.</p>
-          <p>I also wanted to create a place to express who I am and what I truly love.</p>
-          <p>Finally, I was attracted by web technologies, and I am glad that I now learned more about HTML, CSS, and Javascript.</p>
-          <p>In fact, making this website entirely by myself (except the three.js framework used on the main page for 3D rendering) allowed me to understand how these languages work in a deeper way.</p>
-        </div>
-        <div class="container box-plan">
-          <a id="plan" class="anchor-container"></a>
-          <h1># Website plan</h1>
-          <h3>> <a href="#mechatronics">MECHATRONICS</a></h3>
-          <p>- <a href="#master-fonction">The Master Fonction</a><br/>The electronic Swiss knife</p>
-          <p>- <a href="#pc-build">My PC build</a><br/>A technical assembly challenge</p>
-          <p>- <a href="#fpv-drone">My FPV drone</a><br/>A soldering and programming adventure</p>
-          <p>- <a href="#electric-bike">The electric bike</a><br/>My biggest pending project yet</p>
-          <h3>> <a href="#coding">CODING</a></h3>
-          <p>- <a href="#environment">My environment</a><br/>Learn about my workspaces and setups</p>
-          <p>- <a href="#github-projects">My GitHub projects</a><br/>An overview of what I've been working on since I code</p>
-          <p>- <a href="#easy-downloader">Easy downloader</a><br/>The first repository I ever created</p>
-          <p>- <a href="#pressor">Pressor</a><br/>A utility that simplifies multiple media compressions</p>
-          <p>- <a href="#bad-usb-scripts">Bad USB scripts</a><br/>Allows batch code and payloads injections</p>
-          <p>- <a href="#hashacker">Hashacker</a><br/>Hashcat instructions for maximum hash cracking efficiency</p>
-          <p>- <a href="#word-sorter">Word sorter</a><br/>Calculates the typing hardness of words in a list</p>
-          <p>- <a href="#mchecker">MChecker</a><br/>A fast and intelligent minecraft account tester</p>
-          <p>- <a href="#website-dumper">Website dumper</a><br/>Downloads all files from a specific website in an advanced way</p>
-          <p>- <a href="#ecole-directe-cli">École directe CLI</a><br/>A CLI client that allows real-time grades analysis</p>
-          <p>- <a href="#startup-scripts">Startup scripts</a><br/>Setup workspaces in seconds after a fresh installation of Termux or Arch Linux</p>
-          <p>- <a href="#bash-scripts">Bash scripts</a><br/>Daily useful utilities and shortcuts for boosting your productivity</p>
-          <p>- <a href="#portfolio">This portfolio</a><br/>Learn about how and why it has been made</p>
-          <h3>> <a href="#cybersecurity">CYBER SECURITY</a></h3>
-          <p>- <a href="#scam-takedown">Scam takedown</a><br/>The story of a hacker being bullied by a cybersecurity amateur</p>
-          <p>- <a href="#data-breach">Data breach</a><br/>This is what happens when a corporation doesn't secure its API</p>
-          <p>- <a href="#dupe-exploit">Dupe exploit</a><br/>How we discovered an exploit on a Minecraft server that led to its economy's death</p>
-          <p>- <a href="#robinson-bot">Robinson bot</a><br/>The most audacious programming project idea I ever had</p>
-          <h3>> <a href="#contact">CONTACT ME</a></h3>
-          <p>- <a href="#socials">My socials</a><br/>Want to contact me ? Everything is provided here</p>
-          <p>- <a href="#getintouch">Get in touch</a><br/>Let's work together !</p>
-          <div style="height: 10px;"></div>
-        </div>
-      </div>
-    </section>
-    <a id="mechatronics" class="anchor"></a>
-    <section>
-      <h1>MECHATRONICS</h1>
-      <div class="grid-auto">
-        <div class="container">
-          <a id="master-fonction" class="anchor-container"></a>
-          <h1># Master fonction</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="pc-build" class="anchor-container"></a>
-          <h1># PC Build</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="fpv-drone" class="anchor-container"></a>
-          <h1># FPV Drone</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="electric-bike" class="anchor-container"></a>
-          <h1># Electric Bike</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-      </div>
-    </section>
-    <a id="coding" class="anchor"></a>
-    <section>
-      <h1>CODING</h1>
-      <div class="grid-auto">
-        <div class="container">
-          <a id="environment" class="anchor-container"></a>
-          <h1># Environment</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="github-projects" class="anchor-container"></a>
-          <h1># GitHub projects</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="easy-downloader" class="anchor-container"></a>
-          <h1># Easy downloader</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="pressor" class="anchor-container"></a>
-          <h1># Pressor</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="bad-usb-scripts" class="anchor-container"></a>
-          <h1># Bad usb scripts</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="hashacker" class="anchor-container"></a>
-          <h1># Hashacker</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="word-sorter" class="anchor-container"></a>
-          <h1># Word sorter</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="mchecker" class="anchor-container"></a>
-          <h1># MChecker</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="website-dumper" class="anchor-container"></a>
-          <h1># Website dumper</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="ecole-directe-cli" class="anchor-container"></a>
-          <h1># École directe CLI</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="startup-scripts" class="anchor-container"></a>
-          <h1># Startup scripts</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="bash-scripts" class="anchor-container"></a>
-          <h1># Bash scripts</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="portfolio" class="anchor-container"></a>
-          <h1># This portfolio</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-      </div>
-    </section>
-    <a id="cybersecurity" class="anchor"></a>
-    <section>
-      <h1>CYBER SECURITY</h1>
-      <div class="grid-auto">
-        <div class="container">
-          <h1># Scam takedown</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <h1># Data breach</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <h1># Dupe exploit</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <h1># Robinson bot</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-      </div>
-    </section>
-    <a id="contact" class="anchor"></a>
-    <section>
-      <h1>CONTACT ME</h1>
-      <div class="grid-auto">
-        <div class="container">
-          <a id="socials" class="anchor-container"></a>
-          <h1># Socials</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <a id="getintouch" class="anchor-container"></a>
-          <h1># Get in touch</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-      </div>
-    </section>
+  <body>
+    <canvas id="bg"></canvas>
+    <main>
+      <p>
+        <a href="https://github.com/TyraVex">GITHUB</a>
+        <a href="legacy/index.html">LEGACY WEBSITE</a>
+      </p>
+    </main>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

@@ -107,8 +107,13 @@
         color: #30a7fc;
       }
 
-      .plan > p {
-        margin: 0.4em 0 0.4em;
+      .map > .container {
+        padding-bottom: 25px;
+      }
+
+      .map > .container > p {
+        margin: 0.8em 0 0 1em;
+        text-indent: -0.65em;
       }
 
       /*---Portrait---*/
@@ -123,13 +128,18 @@
         }
 
         .title-2 {
-          font-size: 8vmin;
+          font-size: 8vw;
           margin: -35vw 0 0 9vw;
         }
 
         .arrow {
+          margin: 5vw auto 30vw auto;
+          width: 30vw;
+        }
+
+        .arrow-shape {
+          margin: 5vw auto 30vw auto;
           border: solid white;
-          margin: 0 0 25% 44.5%;
           width: 2.5em;
           height: 2.5em;
           border-width: 0 3px 3px 0;
@@ -137,14 +147,8 @@
           transform: rotate(45deg);
         }
 
-        .arrow-button {
-          position: absolute;
-          padding: 60px;
-          margin: -43% 0 0 35%;
-        }
-
         .jump {
-          height: 5vmin;
+          height: 5vw;
         }
 
         .anchor {
@@ -227,7 +231,6 @@
           display: grid;
           row-gap: 25px;
           column-gap: 25px;
-          grid-auto-rows: minmax(100px, auto);
           grid-template-columns: repeat(2, calc(50% - 12.5px));
         }
 
@@ -249,7 +252,7 @@
       <a href=""><img id="logo"></a>
       <div class="buttons">
         <a id="button" href="#home">HOME</a>
-        <a id="button" href="#plan">PLAN</a>
+        <a id="button" href="#map">SITE MAP</a>
         <a id="button" href="#contact">CONTACT</a>
       </div>
     </header>
@@ -262,21 +265,24 @@
       </div>
     </div>
     <div class="jump"></div>
-    <div class="arrow"></div>
-    <a class="arrow-button" href="#home"></a>
+    <a class="arrow" href="#home">
+      <div class="arrow-shape"></div>
+    </a>
     <a class="anchor anchor-fix" id="home"></a>
     <section>
       <h1>HOME</h1>
       <div class="grid">
         <div class="container">
+          <a id="about-me" class="anchor-container"></a>
           <h1># Hello !</h1>
           <p>I am TyraVex, a self-taught developer and an engineering lover.</p>
           <p>I am enthralled by programming, cybersecurity, mechatronics and management.</p>
           <p>Automating tasks, playing with APIs, AIs, and new technologies are my computer related passions.</p>
           <p>Realizing new projects using electronics, soldering, a modeling software and my 3D printer make me enjoy the fascinating world of engeneering.</p>
-          <p>In a few worlds, building the software of tomorrow, performing penetration tests and combining these with electronics in any way is my ultimate dream.</p>
+          <p>In a few words, building the software of tomorrow, performing penetration tests and combining these with electronics in any way is my ultimate dream.</p>
         </div>
         <div class="container">
+          <a id="about-page" class="anchor-container"></a>
           <h1># About this page</h1>
           <p>This page is still in development. It is planned to be merged with the <a href="../index.html">mpp.pw</a> main page.</p>
           <p>I made this website to showcase my mechatronics, coding and cybersecurity projects.</p>
@@ -284,34 +290,53 @@
           <p>Finally, I was attracted by web technologies, and I am glad that I now learned more about HTML, CSS, and Javascript.</p>
           <p>In fact, making this website entirely by myself (except the three.js framework used on the main page for 3D rendering) allowed me to understand how these languages work in a deeper way.</p>
         </div>
-        <div class="container plan">
-          <a id="plan" class="anchor-container"></a>
-          <h1># Website plan</h1>
-          <h3>> <a href="#mechatronics">MECHATRONICS</a></h3>
+      </div>
+    </section>
+    <a id="map" class="anchor"></a>
+    <section>
+      <h1>Site map</h1>
+      <div class="grid map">
+        <div class="container">
+          <h1># <a href="#home">HOME</a></h1>
+          <p>- <a href="#about-me">About me</a><br/>A quick self-introduction</p>
+          <p>- <a href="#about-page">About page</a><br/>Explains the purpose and the status of this page</p>
+        </div>
+        <div class="container">
+          <h1># <a href="#mechatronics">MECHATRONICS</a></h1>
           <p>- <a href="#master-fonction">The Master Fonction</a><br/>The electronic Swiss knife</p>
           <p>- <a href="#pc-build">My PC build</a><br/>A technical assembly challenge</p>
           <p>- <a href="#fpv-drone">My FPV drone</a><br/>A soldering and programming adventure</p>
           <p>- <a href="#electric-bike">The electric bike</a><br/>My biggest pending project yet</p>
-          <h3>> <a href="#coding">CODING</a></h3>
+        </div>
+        <div class="container">
+          <h1># <a href="#coding">CODING</a></h1>
           <p>- <a href="#environment">My environment</a><br/>Learn about my workspaces and setups</p>
-          <p>- <a href="#github-projects">My Github projects</a><br/>An overview of what I've been working on since I code</p>
+          <p>- <a href="#github-projects">My GitHub projects</a><br/>An overview of what I've been working on since I code</p>
           <p>- <a href="#easy-downloader">Easy downloader</a><br/>The first repository I ever created</p>
-          <p>- <a href="#pressor">Pressor</a><br/>An utility that simplifies multiple media compressions</p>
-          <p>- <a href="#bad-usb-scripts">Bad usb scripts</a><br/>Allows batch code and payloads injections</p>
-          <p>- <a href="#hashacker">Hashacker</a><br/>Hashcat instructions for maximum hash cracking efficiency</p>
+          <p>- <a href="#pressor">Pressor</a><br/>A utility that simplifies multiple media compressions</p>
           <p>- <a href="#word-sorter">Word sorter</a><br/>Calculates the typing hardness of words in a list</p>
           <p>- <a href="#website-dumper">Website dumper</a><br/>Downloads all files from a specific website in an advanced way</p>
-          <p>- <a href="#ecole-directe-cli">École directe CLI</a><br/>A cli client that allows real-time grades analysis</p>
-          <p>- <a href="#startup-scripts">Startup scripts</a><br/>Setup workspaces in seconds after a fresh install of Termux or Arch Linux</p>
-          <p>- <a href="#"></a><br/></p>
-          <h3>> <a href="#cybersecurity">CYBER SECURITY</a></h3>
-          <p>- <a href="#"></a><br/></p>
-          <p>- <a href="#"></a><br/></p>
-          <p>- <a href="#"></a><br/></p>
-          <p>- <a href="#"></a><br/></p>
-          <h3>> <a href="#contact">CONTACT ME</a></h3>
+          <p>- <a href="#ecole-directe-cli">École directe CLI</a><br/>A CLI client that allows real-time grades analysis</p>
+          <p>- <a href="#startup-scripts">Startup scripts</a><br/>Setup workspaces in seconds after a fresh installation of Termux or Arch Linux</p>
+          <p>- <a href="#bash-scripts">Bash scripts</a><br/>Daily useful utilities and shortcuts for boosting your productivity</p>
+          <p>- <a href="#portfolio">This portfolio</a><br/>Learn about how and why it has been made</p>
+        </div>
+        <div class="container">
+          <h1># <a href="#cybersecurity">CYBERSECURITY</a></h1>
+          <p>- <a href="#bad-usb-scripts">Bad USB scripts</a><br/>Allows batch code and payloads injections</p>
+          <p>- <a href="#scam-takedown">Scam takedown</a><br/>The story of a hacker being bullied by a cybersecurity amateur</p>
+          <p>- <a href="#data-breach">Data breach</a><br/>This is what happens when a corporation doesn't secure its API</p>
+          <p>- <a href="#dupe-exploit">Dupe exploit</a><br/>How we discovered an exploit on a Minecraft server that led to its economy's death</p>
+          <p>- <a href="#robinson-bot">Robinson bot</a><br/>The most audacious cyber prevention project idea I ever had</p>
+          <p style="margin-left: 0.65em">&#9660; This project features :</p>
+          <p>- <a href="#hashacker">Hashacker</a><br/>Hashcat instructions for maximum hash cracking efficiency</p>
+          <p>- <a href="#mchecker">MChecker</a><br/>A fast and intelligent minecraft account tester</p>
+        </div>
+        <div class="container">
+          <h1># <a href="#contact">CONTACT ME</a></h1>
           <p>- <a href="#socials">My socials</a><br/>Want to contact me ? Everything is provided here</p>
           <p>- <a href="#getintouch">Get in touch</a><br/>Let's work together !</p>
+          <div style="height: 10px;"></div>
         </div>
       </div>
     </section>
@@ -346,54 +371,52 @@
       <h1>CODING</h1>
       <div class="grid">
         <div class="container">
+          <a id="environment" class="anchor-container"></a>
           <h1># Environment</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
-          <h1># Github projects</h1>
+          <a id="github-projects" class="anchor-container"></a>
+          <h1># GitHub projects</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
+          <a id="easy-downloader" class="anchor-container"></a>
           <h1># Easy downloader</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
+          <a id="pressor" class="anchor-container"></a>
           <h1># Pressor</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
-          <h1># Bad usb scripts</h1>
+          <a id="word-sorter" class="anchor-container"></a>
+          <h1># Word sorter</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
-          <h1># Hashacker</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <h1># World sorter</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
-          <h1># MChecker</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
-        </div>
-        <div class="container">
+          <a id="website-dumper" class="anchor-container"></a>
           <h1># Website dumper</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
-          <h1># École directe cli</h1>
+          <a id="ecole-directe-cli" class="anchor-container"></a>
+          <h1># École directe CLI</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
+          <a id="startup-scripts" class="anchor-container"></a>
           <h1># Startup scripts</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
+          <a id="bash-scripts" class="anchor-container"></a>
           <h1># Bash scripts</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
+          <a id="portfolio" class="anchor-container"></a>
           <h1># This portfolio</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
@@ -404,19 +427,38 @@
       <h1>CYBER SECURITY</h1>
       <div class="grid">
         <div class="container">
+          <a id="bad-usb-scripts" class="anchor-container"></a>
+          <h1># Bad usb scripts</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
+        </div>
+        <div class="container">
+          <a id="scam-takedown" class="anchor-container"></a>
           <h1># Scam takedown</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
+          <a id="data-breach" class="anchor-container"></a>
           <h1># Data breach</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
+          <a id="dupe-exploit" class="anchor-container"></a>
           <h1># Dupe exploit</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
         <div class="container">
+          <a id="robinson-bot" class="anchor-container"></a>
           <h1># Robinson bot</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
+        </div>
+        <div class="container">
+          <a id="hashacker" class="anchor-container"></a>
+          <h1># Hashacker</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
+        </div>
+        <div class="container">
+          <a id="mchecker" class="anchor-container"></a>
+          <h1># MChecker</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
       </div>
