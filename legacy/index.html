@@ -78,7 +78,7 @@
         background-color: #424242;
       }
 
-      #title-1 {
+      .title-1 {
         display: flex;
         margin-top: 50px;
         align-items: center;
@@ -101,25 +101,36 @@
 
       @media (max-aspect-ratio: 3/2) {
 
-        #title-1 {
+        .title-1 {
           width: 100vmin;
           height: 100vmin;
           font-size: 13vmin;
         }
 
-        #title-2 {
+        .title-2 {
           font-size: 8vmin;
           margin: -35vw 0 0 9vw;
         }
 
-        #arrow {
-          transform: rotate(45deg);
+        .arrow {
           border: solid white;
-          margin: 0 0 17% 46%;
+          margin: 0 0 25% 42%;
+          padding: 10px;
           width: 2.5em;
           height: 2.5em;
           border-width: 0 3px 3px 0;
           border-bottom-right-radius: 0.35em;
+          transform: rotate(45deg);
+        }
+
+        .arrow-button {
+          position: absolute;
+          padding: 60px;
+          margin: -43% 0 0 35%;
+        }
+
+        .jump {
+          height: 5vmin;
         }
 
         .anchor {
@@ -152,18 +163,20 @@
 
       @media (min-aspect-ratio: 3/2) {
 
-        #title-1 {
+        .title-1 {
+          margin-top: 100px;
           width: 65vmin;
           height: 65vmin;
           font-size: 9vmin;
         }
 
-        #title-2 {
+        .title-2 {
+          margin-top: 100px;
           font-size: 5vmin;
           margin: -22vh 0 0 6vh;
         }
 
-        #top {
+        .top {
           margin: 0;
           top: 50%;
           left: 50%;
@@ -171,12 +184,12 @@
           transform: translate(-50%, -50%);
         }
 
-        #jump {
+        .jump {
           height: 100vmin;
         }
 
         .anchor {
-          top: -100px;
+          top: -95px;
         }
 
         .anchor-fix {
@@ -218,17 +231,18 @@
         <a id="button" href="#contact">CONTACT</a>
       </div>
     </header>
-    <div id="top">
-      <div id="title-1">
+    <div class="top">
+      <div class="title-1">
         <h1>MPP:</h1><br/>
       </div>
-      <div id="title-2">
+      <div class="title-2">
         <h2>my<br/>personnal<br/>projects</h2>
       </div>
     </div>
-    <div id="jump"></div>
-    <div id="arrow"></div>
-    <a id="home" class="anchor anchor-fix"></a>
+    <div class="jump"></div>
+    <div class="arrow"></div>
+    <a class="arrow-button" href="#home"></a>
+    <a class="anchor anchor-fix" id="home"></a>
     <section>
       <h1>HOME</h1>
       <div class="grid">
@@ -237,8 +251,8 @@
           <p>I am TyraVex, a self-taught developer and an engineering lover.</p>
           <p>I am enthralled by programming, cybersecurity, mechatronics and management.</p>
           <p>Automating tasks, playing with APIs, AIs, and new technologies are my computer related passions.</p>
-          <p>Building the software of tomorrow and performing penetration tests for companies is my ultimate dream.</p>
           <p>Realizing new projects using electronics, soldering, a modeling software and my 3D printer make me enjoy the fascinating world of engeneering.</p>
+          <p>In a few worlds, building the software of tomorrow, performing penetration tests and combining these with electronics in any way is my ultimate dream.</p>
         </div>
         <div class="container">
           <h1># About this page</h1>
@@ -342,6 +356,10 @@
         </div>
         <div class="container">
           <h1># Dupe exploit</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
+        </div>
+        <div class="container">
+          <h1># Robinson bot</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod nisl in nulla condimentum, ut scelerisque purus imperdiet. In nec ipsum vel nunc euismod convallis. Mauris viverra maximus ipsum in.</p>
         </div>
       </div>
