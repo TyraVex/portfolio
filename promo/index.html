@@ -28,13 +28,14 @@
 
     #button {
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-      background: linear-gradient(315deg, #7cb0cc, #7c96cc);
+      background-color: rgba(0, 0, 0, 0.2);
       font-family: "Poppins", sans-serif;
       text-decoration: none;
       border-radius: 5vmin;
       position: fixed;
       font-size: 300%;
       color: #1a1a1a;
+      z-index: 99;
     }
 
     .video-container {
@@ -45,25 +46,25 @@
       height: 100%; 
       overflow: hidden;
     }
+    
     .video-container video {
       min-width: 100%; 
       min-height: 100%; 
-
       width: auto;
       height: auto;
-
-      /* Center the video */
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
     }
 
+/*  
     video {
       width: 100vmin;
       height: 100%;
       position: fixed;
     }
+*/   
 
     #button {
       left: 10%;
@@ -82,24 +83,28 @@
   </head>
   <body>
     <img id="logo" src="logo.svg"/>
-    <a id="button" onclick="remove()">Reveal</a>
+    <a id="button" onclick="trigger()">Reveal</a>
     <div class="video-container">
       <video autoplay loop id="video">
         <source src="rickroll.mp4" type="video/mp4">
       </video>
     </div>
     <script>
-       document.body.style.background = "linear-gradient(to top, #8ed9ff, #5165ff)";
-       const logo = document.getElementById('logo');
-       const button = document.getElementById('button');
+      document.body.style.background = "linear-gradient(to top, #8ed9ff, #5165ff)";
+      const logo = document.getElementById('logo');
+      const button = document.getElementById('button');
        const video = document.getElementById('video');
-       video.style.display = "none";
-       function remove() { 
-         logo.remove();
-         button.remove();
-         document.body.style.background = "#000";
-         video.style.display = "block";
-         video.play();
+      video.style.display = "none";
+      var block = { foo: "bar" }; 
+      for (let i = 0; i < 20; i++) {
+        history.pushState(block, "index.html");
+      }
+      function trigger() {
+        logo.remove();
+        button.remove();
+        document.body.style.background = "#000";
+        video.style.display = "block";
+        video.play();
        }
     </script>
   </body>
