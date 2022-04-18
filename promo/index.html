@@ -15,25 +15,28 @@
       }
     }
 
-    html {
-      height:100%;
-    }
-
     body {
       margin: 0;
-      height: 100%;
       animation: fade ease 1.5s;
       -webkit-tap-highlight-color: transparent;
     }    
 
-    #button {
+    img {
+      width: 70vmin;
+      display: block;
+    }
+
+    a {
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
       background-color: rgba(0, 0, 0, 0.2);
       font-family: "Poppins", sans-serif;
-      text-decoration: none;
-      border-radius: 5vmin;
-      position: fixed;
-      font-size: 300%;
+      text-decoration: none;  
+      left: calc(50vw - 2.5em);
+      text-align: center;
+      padding: 0.5em 0.8em;
+      border-radius: 20px;
+      position: relative;
+      font-size: 3em;
       color: #1a1a1a;
       z-index: 99;
     }
@@ -47,7 +50,7 @@
       overflow: hidden;
     }
     
-    .video-container video {
+    video {
       min-width: 100%; 
       min-height: 100%; 
       width: auto;
@@ -58,25 +61,25 @@
       transform: translate(-50%,-50%);
     }
 
-/*  
-    video {
-      width: 100vmin;
-      height: 100%;
-      position: fixed;
-    }
-*/   
-
-    #button {
-      left: 10%;
-      bottom: 5%;
-      padding: 5% 20% 5% 20%;
+    @media all and (orientation:portrait) {
+      a {
+        top: 30vh;
+      }
+      img {
+        margin: 15vmin auto 0;
+      }
     }
 
-    img {
-      position: fixed;
-      width: 70vmin;
-      left: 15%;
-      top: 8%;
+    @media all and (orientation:landscape) {
+      a {
+        top: 20vh;
+      }
+      img {
+        margin: 10vmin auto 0;
+      }
+      .jump {
+        height: 35vmin;
+      }
     }
 
   </style>
@@ -84,25 +87,26 @@
   <body>
     <img id="logo" src="logo.svg"/>
     <a id="button" onclick="trigger()">Reveal</a>
+    <div class="jump"></div>
     <div class="video-container">
       <video autoplay loop id="video">
         <source src="rickroll.mp4" type="video/mp4">
       </video>
     </div>
     <script>
-      document.body.style.background = "linear-gradient(to top, #8ed9ff, #5165ff)";
+      document.body.style.background = "-webkit-gradient(linear, left top, left bottom, from(#5165ff), to(#8ed9ff)) fixed";
       const logo = document.getElementById('logo');
       const button = document.getElementById('button');
        const video = document.getElementById('video');
       video.style.display = "none";
       var block = { foo: "bar" }; 
-      for (let i = 0; i < 20; i++) {
-        history.pushState(block, "index.html");
-      }
       function trigger() {
         logo.remove();
         button.remove();
         document.body.style.background = "#000";
+        for (let i = 0; i < 20; i++) {
+          history.pushState(block, "index.html");
+        }
         video.style.display = "block";
         video.play();
        }
