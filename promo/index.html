@@ -40,9 +40,15 @@
       z-index: 99;
     }
 
-    p {
+    #info {
       text-align: center;
       width: 80vmin;
+    }
+
+    #loading {
+      color: white;
+      width: 75px;
+      margin: 40vh auto;
     }
 
     .video-container {
@@ -65,13 +71,77 @@
       transform: translate(-50%,-50%);
     }
 
+    .lds-ellipsis {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+
+    .lds-ellipsis div {
+      position: absolute;
+      top: 33px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #fff;
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+
+    .lds-ellipsis div:nth-child(1) {
+      left: 8px;
+      animation: lds-ellipsis1 0.6s infinite;
+    }
+
+    .lds-ellipsis div:nth-child(2) {
+      left: 8px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+
+    .lds-ellipsis div:nth-child(3) {
+      left: 32px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+
+    .lds-ellipsis div:nth-child(4) {
+      left: 56px;
+      animation: lds-ellipsis3 0.6s infinite;
+    }
+
+    @keyframes lds-ellipsis1 {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes lds-ellipsis3 {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    @keyframes lds-ellipsis2 {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(24px, 0);
+      }
+    }
+
     @media all and (orientation:portrait) {
 
       a {
         top: 15vh;
       }
 
-      p {
+      #info {
         margin: 10vh auto 0;
       }
 
@@ -93,7 +163,7 @@
         width: 40vmin;
       }
     
-      p {
+      #info {
         margin: 5vh auto 0;
       }
     
@@ -107,11 +177,12 @@
   </head>
   <body>
     <img id="logo" src="logo.svg"/>
-    <p>For a better experience, please turn up your volume</p>
+    <p id="info">For a better experience, please turn up your volume</p>
+    <div id="loading" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     <a id="button" onclick="trigger()">Reveal</a>
     <div class="jump"></div>
     <div class="video-container">
-      <video autoplay loop preload id="video">
+      <video autoplay loop id="video">
         <source src="rickroll.mp4" type="video/mp4">
       </video>
     </div>
@@ -120,22 +191,23 @@
       const logo = document.getElementById('logo');
       const button = document.getElementById('button');
       const video = document.getElementById('video');
-      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+      const info = document.getElementById('info');
+      const loading = document.getElementById('loading');
       video.style.display = "none";
+      loading.style.display = "none";
       var block = { foo: "bar" }; 
       function trigger() {
+        loading.style.display = "block";
         logo.remove();
         button.remove();
+        info.remove();
         document.body.style.background = "#000";
-        console.log(isSafari);
-        if (isSafari === false) {
-          for (let i = 0; i < 20; i++) {
-            history.pushState(block, "index.html");
-          }
-        }
         video.style.display = "block";
-        video.play();
-       }
+        video.play();        
+        for (let i = 0; i < 20; i++) {
+          history.pushState(block, "index.html");
+        }
+      }
     </script>
   </body>
 </html>
