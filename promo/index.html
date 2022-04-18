@@ -17,7 +17,9 @@
 
     body {
       margin: 0;
+      text-decoration: none;  
       animation: fade ease 1.5s;
+      font-family: "Poppins", sans-serif;
       -webkit-tap-highlight-color: transparent;
     }    
 
@@ -28,16 +30,19 @@
     a {
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
       background-color: rgba(0, 0, 0, 0.2);
-      font-family: "Poppins", sans-serif;
-      text-decoration: none;  
       left: calc(50vw - 2.45em);
-      text-align: center;
       padding: 0.5em 0.8em;
       border-radius: 20px;
+      text-align: center;
       position: relative;
       font-size: 3em;
       color: #1a1a1a;
       z-index: 99;
+    }
+
+    p {
+      text-align: center;
+      width: 80vmin;
     }
 
     .video-container {
@@ -61,32 +66,48 @@
     }
 
     @media all and (orientation:portrait) {
+
       a {
-        top: 30vh;
+        top: 15vh;
       }
+
+      p {
+        margin: 10vh auto 0;
+      }
+
       img {
         margin: 15vmin auto 0;
         width: 70vmin;
       }
+
     }
 
     @media all and (orientation:landscape) {
+
       a {
-        top: 15vh;
+        top: 10vh;
       }
+    
       img {
         margin: 10vmin auto 0;
         width: 40vmin;
       }
-      .jump {
-        height: 35vmin;
+    
+      p {
+        margin: 5vh auto 0;
       }
+    
+      .jump {
+        height: 20vmin;
+      }
+
     }
 
   </style>
   </head>
   <body>
     <img id="logo" src="logo.svg"/>
+    <p>For a better experience, please turn up your volume &#128266;</p>
     <a id="button" onclick="trigger()">Reveal</a>
     <div class="jump"></div>
     <div class="video-container">
@@ -98,7 +119,7 @@
       document.body.style.background = "-webkit-gradient(linear, left top, left bottom, from(#5165ff), to(#8ed9ff)) fixed";
       const logo = document.getElementById('logo');
       const button = document.getElementById('button');
-       const video = document.getElementById('video');
+      const video = document.getElementById('video');
       video.style.display = "none";
       var block = { foo: "bar" }; 
       function trigger() {
