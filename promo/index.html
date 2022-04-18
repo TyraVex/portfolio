@@ -107,7 +107,7 @@
   </head>
   <body>
     <img id="logo" src="logo.svg"/>
-    <p>For a better experience, please turn up your volume &#128266;</p>
+    <p>For a better experience, please turn up your volume</p>
     <a id="button" onclick="trigger()">Reveal</a>
     <div class="jump"></div>
     <div class="video-container">
@@ -120,14 +120,18 @@
       const logo = document.getElementById('logo');
       const button = document.getElementById('button');
       const video = document.getElementById('video');
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
       video.style.display = "none";
       var block = { foo: "bar" }; 
       function trigger() {
         logo.remove();
         button.remove();
         document.body.style.background = "#000";
-        for (let i = 0; i < 20; i++) {
-          history.pushState(block, "index.html");
+        console.log(isSafari);
+        if (isSafari === false) {
+          for (let i = 0; i < 20; i++) {
+            history.pushState(block, "index.html");
+          }
         }
         video.style.display = "block";
         video.play();
