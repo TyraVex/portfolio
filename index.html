@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#26282b">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+
+    <meta property="og:title" content="MPP : My Projects Portfolio">
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="assets/preview.png">
+    <meta property="og:url" content="https://mpp.pw">
+    <meta name="twitter:card" content="assets/preview.png">
+    <meta property="og:description" content="This portfolio was made to showcase my mechatronics, programming and cybersecurity projects.">
+    <meta property="og:site_name" content="MPP">
+
     <title>MPP</title>
     <style>
 
@@ -119,7 +128,7 @@
 
       /*---Portrait---*/
 
-      @media (max-aspect-ratio: 3/2) {
+      @media (max-aspect-ratio: 1/1) {
 
         .title-1 {
           width: 100vw;
@@ -184,7 +193,7 @@
 
       /*---Landscape---*/
 
-      @media (min-aspect-ratio: 3/2) {
+      @media (min-aspect-ratio: 1/1) {
 
         .title-1 {
           margin-top: 100px;
@@ -232,7 +241,7 @@
           display: grid;
           row-gap: 25px;
           column-gap: 25px;
-          grid-template-columns: repeat(2, calc(50% - 12.5px));
+          grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
         }
 
         section > h1 {
@@ -262,7 +271,7 @@
         <h1>MPP:</h1><br/>
       </div>
       <div class="title-2">
-        <h2>my<br/>personnal<br/>projects</h2>
+        <h2>my<br/>projects<br/>portfolio</h2>
       </div>
     </div>
     <div class="jump"></div>
