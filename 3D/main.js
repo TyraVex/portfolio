@@ -13,11 +13,11 @@ const controls = new OrbitControls(camera,renderer.domElement);
 // global settings
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.render(scene, camera );
+renderer.render(scene, camera);
 
 // lights
 const pointLight = new THREE.PointLight(0xffffff);
-const ambientLight = new THREE.AmbientLight(0xffffff);
+const ambientLight = new THREE.AmbientLight( 0x404040 ); // soft white light
 
 // helpers
 //const gridHelper = new THREE.GridHelper(2000,100);
@@ -30,7 +30,7 @@ function addStar() {
 
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(800));
+    .map(() => THREE.MathUtils.randFloatSpread(1000));
 
   star.position.set(x, y, z);
   scene.add(star);
@@ -51,8 +51,8 @@ loader.load('../assets/text.glb', function ( model ) {
 );
 
 // objects settings
-camera.position.set(0, 260, 0);
-pointLight.position.set(0, 300, 0);
+camera.position.set(0, 0, 260);
+pointLight.position.set(0, 0, 500);
 torus.position.set(0, 0, 0);
 
 // add objects
