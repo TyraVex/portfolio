@@ -7,7 +7,7 @@ import {GLTFLoader} from 'https://unpkg.com/three@0.127.0/examples/jsm/loaders/G
 const scene = new THREE.Scene();
 const loader = new GLTFLoader();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({canvas:document.querySelector('#bg')});
+const renderer = new THREE.WebGLRenderer({canvas:document.querySelector('#bg'), antialias: true});
 const controls = new OrbitControls(camera,renderer.domElement);
 
 // global settings
@@ -18,9 +18,6 @@ renderer.render(scene, camera);
 // lights
 const pointLight = new THREE.PointLight(0xffffff);
 const ambientLight = new THREE.AmbientLight( 0x404040 ); // soft white light
-
-// helpers
-//const gridHelper = new THREE.GridHelper(2000,100);
 
 //stars
 function addStar() {
@@ -56,7 +53,6 @@ pointLight.position.set(0, 0, 500);
 torus.position.set(0, 0, 0);
 
 // add objects
-//scene.add(gridHelper);
 scene.add(pointLight);
 scene.add(ambientLight);
 scene.add(torus);
