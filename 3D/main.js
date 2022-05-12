@@ -40,7 +40,7 @@ const material = new THREE.MeshBasicMaterial({ color: 0xff6347, wireframe: true 
 const torus = new THREE.Mesh(geometry, material);
 
 // 3d-model
-loader.load('../assets/text.glb', function ( model ) {
+loader.load('assets/text.glb', function ( model ) {
     scene.add(model.scene);
   }, undefined, function (error) {
   	console.error(error);
