@@ -29,9 +29,9 @@ h1 {
   width: 100%;
   height: 100%;
   z-index: 1;
+  background-color: rgba(0,0,0,0.75) !important;
 }
 .full .content {
-  background-color: rgba(0,0,0,0.75) !important;
   height: 100%;
   width: 100%;
   display: grid;
@@ -44,12 +44,6 @@ h1 {
   max-height: 100%;
   margin: auto;
 }
-.byebye {
-  opacity: 0;
-}
-.byebye:hover {
-  transform: scale(0.2) !important;
-}
 .gallery {
   display: grid;
   grid-column-gap: 8px;
@@ -60,11 +54,17 @@ h1 {
 .gallery img {
   max-width: 100%;
   border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  transition: all 1.5s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: all 1s ease;
 }
 .gallery .content {
   padding: 4px;
+}
+.byebye {
+  opacity: 0;
+}
+.byebye:hover {
+  transform: scale(0.2) !important;
 }
 .gallery .gallery-item {
   transition: grid-row-start 300ms linear;
